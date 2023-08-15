@@ -6,11 +6,14 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Layout from './Layout'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
+import { UserContextProvider } from '../UserContext'
 
 
 const App = () => {
   return (
+    
     <BrowserRouter>
+    <UserContextProvider >
         <Routes>
           <Route element={<Layout />} >
             <Route path="/" element={<Home />} />
@@ -18,6 +21,7 @@ const App = () => {
             <Route path="/register" element={<RegisterPage />} />
           </Route>
         </Routes>
+  </UserContextProvider>
     </BrowserRouter>
     
   )
